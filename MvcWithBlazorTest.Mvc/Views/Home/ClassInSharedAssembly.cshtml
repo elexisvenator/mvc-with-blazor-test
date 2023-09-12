@@ -1,0 +1,20 @@
+﻿@using MvcWithBlazorTest.Shared
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Class in shared assembly test</h1>
+    <p>If this works, there will be no errors in the console and the counter will be responsive</p>
+    
+    @{
+        var testModel = new TestModel2
+        {
+            Message = "Successful test message"
+        };
+    }
+
+    <component type="typeof(CounterWithMessageFromSharedAssembly)" render-mode="WebAssemblyPrerendered" 
+               param-CurrentCount="10"
+               param-TestModel="@testModel" />
+</div>

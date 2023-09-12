@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Testing Blazor Prerendered webassembly components in an MVC application</h1>
+
+    <p>
+        Passing objects as parameters into components only works if the class is in the same assembly.
+        If it is in a different assembly then the component will prerender correctly but fail in the browser.
+    </p>
+    <p>Click the navigation links above for a demonstration</p>
+    <hr/>
+    <p>vvv This component is prerendered WASM vvv</p>
+    <component type="typeof(Counter)" render-mode="WebAssemblyPrerendered"
+               param-CurrentCount="10" />
+</div>

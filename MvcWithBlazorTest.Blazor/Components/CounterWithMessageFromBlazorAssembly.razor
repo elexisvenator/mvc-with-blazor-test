@@ -1,0 +1,22 @@
+﻿@using MvcWithBlazorTest.Blazor.Models
+<p>Counter</p>
+
+<p role="status">Message: @TestModel.Message</p>
+
+<p role="status">Current count: @CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+
+    [Parameter]
+    public TestModel1 TestModel { get; set; } = new TestModel1 { Message = "MESSAGE NOT SET"};
+
+    [Parameter]
+    public int CurrentCount { get; set; }
+
+    private void IncrementCount()
+    {
+        CurrentCount++;
+    }
+}

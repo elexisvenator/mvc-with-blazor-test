@@ -1,0 +1,21 @@
+﻿<p>Counter</p>
+
+<p role="status">Message: @TestModel.Message</p>
+
+<p role="status">Current count: @CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+
+    [Parameter]
+    public TestModel2 TestModel { get; set; } = new TestModel2 { Message = "MESSAGE NOT SET"};
+
+    [Parameter]
+    public int CurrentCount { get; set; }
+
+    private void IncrementCount()
+    {
+        CurrentCount++;
+    }
+}
